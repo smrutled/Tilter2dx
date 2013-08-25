@@ -29,7 +29,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // run
     director->runWithScene(scene);
-	director->
     return true;
 }
 

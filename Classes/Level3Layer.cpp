@@ -239,7 +239,7 @@ void Level3Layer::didAccelerate(Acceleration* acceleration)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)      
 	b2Vec2 gravity( accelX*10, accelY*10);
 #endif
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)      
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_PLATFORM_MAC)      
 	b2Vec2 gravity( accelX*10, accelY*10);
 #endif
 
