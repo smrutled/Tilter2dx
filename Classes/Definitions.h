@@ -21,9 +21,9 @@
 
 
 enum _entityCategory {
-BOUNDARY =          0x0001,
-A_BALL =     0x0002,
-A_SENSOR =        0x0004
+	BOUNDARY = 0x0001,
+	A_BALL = 0x0002,
+	A_SENSOR = 0x0004
 };
 
 

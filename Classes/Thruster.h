@@ -16,19 +16,19 @@
 #include "Entity.h"
 #include "Ball.h"
 
-class  Thruster: public Entity{
-    
+class  Thruster : public Entity{
+
 public:
-    b2Body *body;
-    float m_angle;
-    int m_force;
-    b2Color m_color;
-    b2Vec2 vert[3];
-   virtual void render(GLESDebugDraw* draw);
-    Thruster(b2World* world, int force, cocos2d::Point position, float width, float height, float angle, uint16 categoryBits, uint16 maskBits);
-    
-    void applyThrust( Ball* ball);
-      
+	b2Body *body;
+	float m_angle;
+	int m_force;
+	b2Color m_color;
+	b2Vec2 vert[3];
+	virtual void render(GLESDebugDraw* draw);
+	Thruster(b2World* world, int force, cocos2d::Point position, float width, float height, float angle, uint16 categoryBits, uint16 maskBits);
+
+	void applyThrust(Ball* ball);
+
 };
 
 #endif

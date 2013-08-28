@@ -14,17 +14,17 @@
 
 class EndZone : public Entity{
 public:
-    b2Body *body;
-    float m_radius;
-    b2Color m_color;
-    int hasBall;
-    void ballEnter(Ball* ball);
-    void ballExit(Ball* ball);
-    virtual void render(GLESDebugDraw* draw);
-    
-    EndZone(b2World* world,cocos2d::Point position, float radius, uint16 categoryBits, uint16 maskBits);
-    
-    
+	b2Body *body;
+	float m_radius;
+	b2Color m_color;
+	int hasBall;
+	void ballEnter(Ball* ball);
+	void ballExit(Ball* ball);
+	virtual void render(GLESDebugDraw* draw);
+
+	EndZone(b2World* world, cocos2d::Point position, float radius, uint16 categoryBits, uint16 maskBits);
+
+
 };
 
 #endif

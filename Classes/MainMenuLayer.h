@@ -13,20 +13,20 @@
 
 class MainMenuLayer : public cocos2d::Layer {
 public:
-    ~MainMenuLayer();
-    MainMenuLayer();
-    
+	~MainMenuLayer();
+	MainMenuLayer();
+
 	void menuCallback(Object* pSender);
-    void menuExitCallback(Object* pSender);
-    static cocos2d::Scene* scene();
-    virtual void draw();
-    virtual void onTouchesEnded(cocos2d::Set* touches, cocos2d::Event* event);
-    void tick(float dt);
-    GLESDebugDraw* gdraw;
-    float factorX;
-    float factorY;
-    float designHeight;
-    float designWidth;
+	void menuExitCallback(Object* pSender);
+	static cocos2d::Scene* scene();
+	virtual void draw();
+	virtual void onTouchesEnded(cocos2d::Set* touches, cocos2d::Event* event);
+	void tick(float dt);
+	GLESDebugDraw* gdraw;
+	float factorX;
+	float factorY;
+	float designHeight;
+	float designWidth;
 
 };
 

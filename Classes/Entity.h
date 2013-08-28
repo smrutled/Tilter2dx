@@ -16,11 +16,11 @@
 
 class Entity
 {
-    public: int type;
-    virtual void render(GLESDebugDraw* draw){
-        return;
-    };
-    
+public: int type;
+		virtual void render(GLESDebugDraw* draw){
+			return;
+		};
+
 };
 
 

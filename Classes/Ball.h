@@ -17,20 +17,20 @@
 
 #include "Entity.h"
 
-class  Ball: public Entity{
-    
-    public:
-    b2Body *body;
-    float m_radius;
-    b2Color m_color;
-    cocos2d::Point start;
-    bool isAlive;
-    ~Ball();
-    Ball(b2World* world,cocos2d::Point position, float radius, uint16 categoryBits, uint16 maskBits);
-    
-    void sendToStart();
-   virtual void render(GLESDebugDraw* draw);
-        
+class  Ball : public Entity{
+
+public:
+	b2Body *body;
+	float m_radius;
+	b2Color m_color;
+	cocos2d::Point start;
+	bool isAlive;
+	~Ball();
+	Ball(b2World* world, cocos2d::Point position, float radius, uint16 categoryBits, uint16 maskBits);
+
+	void sendToStart();
+	virtual void render(GLESDebugDraw* draw);
+
 };
-    
+
 #endif

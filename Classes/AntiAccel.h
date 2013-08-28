@@ -14,17 +14,17 @@
 #include "Entity.h"
 #include "Ball.h"
 
-class  AntiAccel: public Entity{
-    
+class  AntiAccel : public Entity{
+
 public:
-    b2Body *body;
-    b2Color m_color;
-    virtual void render(GLESDebugDraw* draw);
-    AntiAccel(b2World* world, cocos2d::Point position, float width, float height, uint16 categoryBits, uint16 maskBits);
-    b2Vec2 vert[8];
-    int vertcount;
-    void setReverseGravity( Ball* ball);
-    void setNormalGravity(Ball* ball);
-    
+	b2Body *body;
+	b2Color m_color;
+	virtual void render(GLESDebugDraw* draw);
+	AntiAccel(b2World* world, cocos2d::Point position, float width, float height, uint16 categoryBits, uint16 maskBits);
+	b2Vec2 vert[8];
+	int vertcount;
+	void setReverseGravity(Ball* ball);
+	void setNormalGravity(Ball* ball);
+
 };
 #endif

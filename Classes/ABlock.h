@@ -15,14 +15,14 @@
 #include "Entity.h"
 
 
-class ABlock: public Entity{
-    public:
-    ABlock(b2World* world, cocos2d::Point position, float width, float height, uint16 categoryBits, uint16 maskBits);
-    b2Body *body;
-    b2Vec2 vert[8];
-    int vertcount;
-    
-    virtual void render(GLESDebugDraw* draw);
+class ABlock : public Entity{
+public:
+	ABlock(b2World* world, cocos2d::Point position, float width, float height, uint16 categoryBits, uint16 maskBits);
+	b2Body *body;
+	b2Vec2 vert[8];
+	int vertcount;
+
+	virtual void render(GLESDebugDraw* draw);
 };
 
 
