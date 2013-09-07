@@ -1,4 +1,5 @@
 #include "AppDelegate.h"
+#include "Definitions.h"
 #include "MainMenuLayer.h"
 
 USING_NS_CC;
@@ -24,9 +25,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	// set FPS. the default value is 1.0/60 if you don't call this
 	director->setAnimationInterval(1.0 / 60);
 
+	Size screenSize = Director::getInstance()->getWinSize();
+	screenHeight = screenSize.height;
+	screenWidth = screenSize.width;
+	factorX = screenWidth / designWidth;
+	factorY = screenHeight / designHeight;
+	scaledWidth = screenWidth*factorX;
+	scaledHeight = screenHeight*factorY;
+
 	// create a scene. it's an autorelease object
 	Scene *scene = MainMenuLayer::scene();
-
 	// run
 	director->runWithScene(scene);
 	return true;

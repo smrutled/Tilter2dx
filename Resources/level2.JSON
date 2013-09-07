@@ -1,0 +1,14 @@
+{
+	"gameObjects": {
+		"01": {"type": "ball", "radius": 10, "x": 25, "y": 10},
+		"02": {"type": "ball", "radius": 10, "x": 455, "y": 310},
+		"03": {"type": "thruster", "width": 150, "height": 10, "angle": 90, "force": 30, "x": 360, "y": 0},
+		"04": {"type": "endzone", "radius": 10, "x": 20, "y":  300},
+		"05": {"type": "endzone", "radius": 10, "x": 455, "y": 20},
+		"06": {"type": "antiaccel", "width": 480, "height": 80, "x": 0, "y": 120},
+		"07": {"type": "wall", "x": 225, "y": 0, "width": 15, "height": 320},
+		"08": {"type": "wall", "x": 0, "y": 250, "width": 75, "height": 20},
+		"09": {"type": "wall", "x": 55, "y": 270, "width": 20, "height": 20},
+		"10": {"type": "wall", "x": 405, "y": 50, "width": 75, "height": 20}
+	}
+}

@@ -8,31 +8,17 @@
 
 #include "MainMenuLayer.h"
 #include "SimpleAudioEngine.h"
-#include "Level1Layer.h"
-#include "Level2Layer.h"
-#include "Level3Layer.h"
-
+#include "LevelLayer.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
 
-
-
 MainMenuLayer::MainMenuLayer()
 {
-
-
 	setTouchEnabled(true);
 	// Font Item
 
 	gdraw = new GLESDebugDraw();
-
-	Size screenSize = Director::getInstance()->getWinSize();
-	designWidth = 480;
-	designHeight = 320;
-	//Scale screen to resolution
-	factorX = screenSize.width / designWidth;
-	factorY = screenSize.height / designHeight;
 
 	setTouchEnabled(true);
 	setAccelerometerEnabled(true);
@@ -47,15 +33,13 @@ MainMenuLayer::MainMenuLayer()
 	Menu* menu = Menu::create(item, item1, NULL);
 	addChild(menu, -1);
 	menu->alignItemsVertically();
-	menu->setPosition(screenSize.width / 2, screenSize.height / 2);
+	menu->setPosition(screenWidth / 2, screenHeight / 2);
 
 
 	LabelTTF *label = LabelTTF::create("Tilter 2D", "Marker Felt", 50);
 	addChild(label, -1);
 	label->setColor(Color3B(255, 0, 0));
-	label->setPosition(Point(screenSize.width / 2, screenSize.height - 50));
-
-	schedule(schedule_selector(MainMenuLayer::tick));
+	label->setPosition(Point(screenWidth / 2, screenHeight - 50));
 }
 
 MainMenuLayer::~MainMenuLayer()
@@ -74,9 +58,9 @@ void MainMenuLayer::draw()
 
 
 	for (int i = 0; i < designWidth; i += designWidth / 20)
-		gdraw->DrawSegment(b2Vec2(i*factorX, 0), b2Vec2(i*factorX, designHeight*factorY), b2Color(0, 1, 1), .2);
+		gdraw->DrawSegment(b2Vec2(i*factorX, 0), b2Vec2(i*factorX, scaledHeight), b2Color(0, 1, 1), .2);
 	for (int i = 0; i < designHeight; i += designHeight / 20)
-		gdraw->DrawSegment(b2Vec2(0, i*factorY), b2Vec2(designWidth*factorX, i*factorY), b2Color(0, 1, 1), .2);
+		gdraw->DrawSegment(b2Vec2(0, i*factorY), b2Vec2(scaledWidth, i*factorY), b2Color(0, 1, 1), .2);
 
 	// restore default GL states
 
@@ -86,37 +70,12 @@ void MainMenuLayer::draw()
 }
 
 void MainMenuLayer::menuCallback(Object *pSender){
-	Director::getInstance()->replaceScene(Level1Layer::scene());
+	Director::getInstance()->replaceScene(LevelLayer::scene(1));
 }
 
 void MainMenuLayer::menuExitCallback(Object *pSender){
 	Director::getInstance()->end();
 }
-void MainMenuLayer::tick(float dt)
-{
-
-}
-
-void MainMenuLayer::onTouchesEnded(Set* touches, Event* event)
-{
-	//Add a new body/atlas sprite at the touched location
-	SetIterator it;
-	Touch* touch;
-
-	for (it = touches->begin(); it != touches->end(); it++)
-	{
-		touch = (Touch*) (*it);
-
-		if (!touch)
-			break;
-
-		Point location = touch->getLocationInView();
-
-		location = Director::getInstance()->convertToGL(location);
-
-	}
-}
-
 
 Scene* MainMenuLayer::scene()
 {
@@ -124,7 +83,7 @@ Scene* MainMenuLayer::scene()
 	Scene *scene = Scene::create();
 
 	// add layer as a child to scene
-	Layer* layer = new MainMenuLayer();
+	auto layer = new MainMenuLayer();
 	scene->addChild(layer);
 	layer->autorelease();;
 

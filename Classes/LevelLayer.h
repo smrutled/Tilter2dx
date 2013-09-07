@@ -20,17 +20,16 @@
 #include "Entity.h"
 
 
-
-class Level1Layer : public cocos2d::Layer {
+class LevelLayer : public cocos2d::Layer {
 public:
-	~Level1Layer();
-	Level1Layer();
+	~LevelLayer();
+	LevelLayer();
+
+	void initWorld();
 
 	// returns a Scene that contains the Level1Layer as the only child
-	static cocos2d::Scene* scene();
-
+	static cocos2d::Scene* scene(int lvl);
 	virtual void draw();
-	virtual void onTouchesEnded(cocos2d::Set* touches, cocos2d::Event* event);
 	virtual void didAccelerate(cocos2d::Acceleration* acceleration);
 	void tick(float dt);
 
@@ -40,16 +39,13 @@ public:
 
 private:
 	b2World* world;
-	float factorX;
-	float factorY;
-	float designHeight;
-	float designWidth;
 	bool paused;
-
 	GLESDebugDraw *m_debugDraw;
 	vector<Ball*> balls;
-	vector<EndZone*>endpoints;
+	vector<EndZone*>endzones;
 	vector<Entity*>gameObjects;
+
+	
 };
 
 #endif

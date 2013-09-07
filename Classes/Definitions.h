@@ -19,6 +19,15 @@
 #define ENT_ANTIACCEL 5
 #define ENT_BLOCK 6
 
+extern float designWidth;
+extern float designHeight;
+extern float factorX;
+extern float factorY;
+extern float scaledWidth;
+extern float scaledHeight;
+extern float screenWidth;
+extern float screenHeight;
+extern int currentLevel;
 
 enum _entityCategory {
 	BOUNDARY = 0x0001,
