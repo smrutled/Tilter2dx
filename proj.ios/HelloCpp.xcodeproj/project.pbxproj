@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1405608517CA066B00D8ED59 /* backround.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1405608417CA066B00D8ED59 /* backround.mp3 */; };
-		1405609417CA067200D8ED59 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1405609217CA067200D8ED59 /* arial.ttf */; };
-		1405609517CA067200D8ED59 /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1405609317CA067200D8ED59 /* Marker Felt.ttf */; };
 		14983DAB17C9EA7E0040B958 /* ABlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DA517C9EA7E0040B958 /* ABlock.cpp */; };
 		14983DAC17C9EA7E0040B958 /* AContactListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DA717C9EA7E0040B958 /* AContactListener.cpp */; };
 		14983DAD17C9EA7E0040B958 /* AntiAccel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DA917C9EA7E0040B958 /* AntiAccel.cpp */; };
@@ -17,11 +15,14 @@
 		14983DC317C9EA8D0040B958 /* EndZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DB117C9EA8D0040B958 /* EndZone.cpp */; };
 		14983DC417C9EA8D0040B958 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DB417C9EA8D0040B958 /* GLES-Render.cpp */; };
 		14983DC517C9EA8D0040B958 /* Hole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DB617C9EA8D0040B958 /* Hole.cpp */; };
-		14983DC617C9EA8D0040B958 /* Level1Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DB817C9EA8D0040B958 /* Level1Layer.cpp */; };
-		14983DC717C9EA8D0040B958 /* Level2Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DBA17C9EA8D0040B958 /* Level2Layer.cpp */; };
-		14983DC817C9EA8D0040B958 /* Level3Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DBC17C9EA8D0040B958 /* Level3Layer.cpp */; };
 		14983DC917C9EA8D0040B958 /* MainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DBE17C9EA8D0040B958 /* MainMenuLayer.cpp */; };
 		14983DCA17C9EA8D0040B958 /* Thruster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14983DC017C9EA8D0040B958 /* Thruster.cpp */; };
+		149BBAE717E640EB00A43432 /* Definitions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 149BBAE417E640EB00A43432 /* Definitions.cpp */; };
+		149BBAE817E640EB00A43432 /* LevelLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 149BBAE517E640EB00A43432 /* LevelLayer.cpp */; };
+		149BBAED17E6415700A43432 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 149BBAE917E6415700A43432 /* arial.ttf */; };
+		149BBAEE17E6415700A43432 /* level1.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 149BBAEA17E6415700A43432 /* level1.JSON */; };
+		149BBAEF17E6415700A43432 /* level2.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 149BBAEB17E6415700A43432 /* level2.JSON */; };
+		149BBAF017E6415700A43432 /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 149BBAEC17E6415700A43432 /* Marker Felt.ttf */; };
 		1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3624316D4A1E8000847F2 /* AppController.mm */; };
 		1AC3624B16D4A1E8000847F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3624516D4A1E8000847F2 /* main.m */; };
 		1ACB3244164770DE00914215 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACB3243164770DE00914215 /* libcurl.a */; };
@@ -192,8 +193,6 @@
 /* Begin PBXFileReference section */
 		14055F9417CA007C00D8ED59 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = SOURCE_ROOT; };
 		1405608417CA066B00D8ED59 /* backround.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backround.mp3; sourceTree = "<group>"; };
-		1405609217CA067200D8ED59 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
-		1405609317CA067200D8ED59 /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
 		14983DA517C9EA7E0040B958 /* ABlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ABlock.cpp; path = ../Classes/ABlock.cpp; sourceTree = "<group>"; };
 		14983DA617C9EA7E0040B958 /* ABlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABlock.h; path = ../Classes/ABlock.h; sourceTree = "<group>"; };
 		14983DA717C9EA7E0040B958 /* AContactListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AContactListener.cpp; path = ../Classes/AContactListener.cpp; sourceTree = "<group>"; };
@@ -210,16 +209,17 @@
 		14983DB517C9EA8D0040B958 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLES-Render.h"; path = "../Classes/GLES-Render.h"; sourceTree = "<group>"; };
 		14983DB617C9EA8D0040B958 /* Hole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hole.cpp; path = ../Classes/Hole.cpp; sourceTree = "<group>"; };
 		14983DB717C9EA8D0040B958 /* Hole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hole.h; path = ../Classes/Hole.h; sourceTree = "<group>"; };
-		14983DB817C9EA8D0040B958 /* Level1Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Level1Layer.cpp; path = ../Classes/Level1Layer.cpp; sourceTree = "<group>"; };
-		14983DB917C9EA8D0040B958 /* Level1Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level1Layer.h; path = ../Classes/Level1Layer.h; sourceTree = "<group>"; };
-		14983DBA17C9EA8D0040B958 /* Level2Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Level2Layer.cpp; path = ../Classes/Level2Layer.cpp; sourceTree = "<group>"; };
-		14983DBB17C9EA8D0040B958 /* Level2Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level2Layer.h; path = ../Classes/Level2Layer.h; sourceTree = "<group>"; };
-		14983DBC17C9EA8D0040B958 /* Level3Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Level3Layer.cpp; path = ../Classes/Level3Layer.cpp; sourceTree = "<group>"; };
-		14983DBD17C9EA8D0040B958 /* Level3Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level3Layer.h; path = ../Classes/Level3Layer.h; sourceTree = "<group>"; };
 		14983DBE17C9EA8D0040B958 /* MainMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainMenuLayer.cpp; path = ../Classes/MainMenuLayer.cpp; sourceTree = "<group>"; };
 		14983DBF17C9EA8D0040B958 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuLayer.h; path = ../Classes/MainMenuLayer.h; sourceTree = "<group>"; };
 		14983DC017C9EA8D0040B958 /* Thruster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thruster.cpp; path = ../Classes/Thruster.cpp; sourceTree = "<group>"; };
 		14983DC117C9EA8D0040B958 /* Thruster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thruster.h; path = ../Classes/Thruster.h; sourceTree = "<group>"; };
+		149BBAE417E640EB00A43432 /* Definitions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Definitions.cpp; path = ../Classes/Definitions.cpp; sourceTree = "<group>"; };
+		149BBAE517E640EB00A43432 /* LevelLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LevelLayer.cpp; path = ../Classes/LevelLayer.cpp; sourceTree = "<group>"; };
+		149BBAE617E640EB00A43432 /* LevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelLayer.h; path = ../Classes/LevelLayer.h; sourceTree = "<group>"; };
+		149BBAE917E6415700A43432 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
+		149BBAEA17E6415700A43432 /* level1.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.JSON; sourceTree = "<group>"; };
+		149BBAEB17E6415700A43432 /* level2.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level2.JSON; sourceTree = "<group>"; };
+		149BBAEC17E6415700A43432 /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
 		1AC3624216D4A1E8000847F2 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = SOURCE_ROOT; };
 		1AC3624316D4A1E8000847F2 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = SOURCE_ROOT; };
 		1AC3624516D4A1E8000847F2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
@@ -293,18 +293,12 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		1405609117CA067200D8ED59 /* fonts */ = {
-			isa = PBXGroup;
-			children = (
-				1405609217CA067200D8ED59 /* arial.ttf */,
-				1405609317CA067200D8ED59 /* Marker Felt.ttf */,
-			);
-			path = fonts;
-			sourceTree = "<group>";
-		};
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				149BBAE417E640EB00A43432 /* Definitions.cpp */,
+				149BBAE517E640EB00A43432 /* LevelLayer.cpp */,
+				149BBAE617E640EB00A43432 /* LevelLayer.h */,
 				14983DAE17C9EA8D0040B958 /* Ball.cpp */,
 				14983DAF17C9EA8D0040B958 /* Ball.h */,
 				14983DB017C9EA8D0040B958 /* Definitions.h */,
@@ -315,12 +309,6 @@
 				14983DB517C9EA8D0040B958 /* GLES-Render.h */,
 				14983DB617C9EA8D0040B958 /* Hole.cpp */,
 				14983DB717C9EA8D0040B958 /* Hole.h */,
-				14983DB817C9EA8D0040B958 /* Level1Layer.cpp */,
-				14983DB917C9EA8D0040B958 /* Level1Layer.h */,
-				14983DBA17C9EA8D0040B958 /* Level2Layer.cpp */,
-				14983DBB17C9EA8D0040B958 /* Level2Layer.h */,
-				14983DBC17C9EA8D0040B958 /* Level3Layer.cpp */,
-				14983DBD17C9EA8D0040B958 /* Level3Layer.h */,
 				14983DBE17C9EA8D0040B958 /* MainMenuLayer.cpp */,
 				14983DBF17C9EA8D0040B958 /* MainMenuLayer.h */,
 				14983DC017C9EA8D0040B958 /* Thruster.cpp */,
@@ -400,7 +388,10 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1405609117CA067200D8ED59 /* fonts */,
+				149BBAE917E6415700A43432 /* arial.ttf */,
+				149BBAEA17E6415700A43432 /* level1.JSON */,
+				149BBAEB17E6415700A43432 /* level2.JSON */,
+				149BBAEC17E6415700A43432 /* Marker Felt.ttf */,
 				1405608417CA066B00D8ED59 /* backround.mp3 */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
@@ -592,8 +583,10 @@
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				1405608517CA066B00D8ED59 /* backround.mp3 in Resources */,
-				1405609417CA067200D8ED59 /* arial.ttf in Resources */,
-				1405609517CA067200D8ED59 /* Marker Felt.ttf in Resources */,
+				149BBAED17E6415700A43432 /* arial.ttf in Resources */,
+				149BBAEE17E6415700A43432 /* level1.JSON in Resources */,
+				149BBAEF17E6415700A43432 /* level2.JSON in Resources */,
+				149BBAF017E6415700A43432 /* Marker Felt.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,11 +608,10 @@
 				14983DC317C9EA8D0040B958 /* EndZone.cpp in Sources */,
 				14983DC417C9EA8D0040B958 /* GLES-Render.cpp in Sources */,
 				14983DC517C9EA8D0040B958 /* Hole.cpp in Sources */,
-				14983DC617C9EA8D0040B958 /* Level1Layer.cpp in Sources */,
-				14983DC717C9EA8D0040B958 /* Level2Layer.cpp in Sources */,
-				14983DC817C9EA8D0040B958 /* Level3Layer.cpp in Sources */,
 				14983DC917C9EA8D0040B958 /* MainMenuLayer.cpp in Sources */,
 				14983DCA17C9EA8D0040B958 /* Thruster.cpp in Sources */,
+				149BBAE717E640EB00A43432 /* Definitions.cpp in Sources */,
+				149BBAE817E640EB00A43432 /* LevelLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

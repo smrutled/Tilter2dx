@@ -13,7 +13,7 @@
 #include "ABlock.h"
 #include "Thruster.h"
 #include "AntiAccel.h"
-#include "CocoStudio\Json\lib_json\json_lib.h"
+#include "cocos-ext.h"
 #include <fstream>
 
 using namespace cocos2d;
