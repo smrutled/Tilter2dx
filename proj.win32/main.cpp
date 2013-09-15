@@ -14,8 +14,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
     // create the application instance
     AppDelegate app;
-    EGLView* eglView = EGLView::getInstance();
-    eglView->setViewName("Tilter2dx");
-    eglView->setFrameSize(480, 320);
+	EGLView* eglView = new EGLView();
+	eglView->init("Tilter2dx", 480, 320);
     return Application::getInstance()->run();
 }

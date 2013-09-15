@@ -13,7 +13,7 @@
 #include "ABlock.h"
 #include "Thruster.h"
 #include "AntiAccel.h"
-#include "CCArmature\external_tool\Json\lib_json\json_lib.h"
+#include "CocoStudio\Json\lib_json\json_lib.h"
 #include <fstream>
 
 using namespace cocos2d;
@@ -98,8 +98,9 @@ void LevelLayer::initWorld(){
 
 	CSJson::Value root;
 	CSJson::Reader reader;
-	string filename = "level" + std::to_string(currentLevel) + ".JSON";
-	string levelepath = FileUtils::getInstance()->fullPathForFilename(filename.c_str());
+	char filename[20];
+	sprintf(filename, "level%d.JSON", currentLevel);
+	string levelepath = FileUtils::getInstance()->fullPathForFilename(filename);
 	std::ifstream infile(levelepath);
 	bool parsingSuccessful = reader.parse(infile, root);
 	infile.close();
@@ -112,7 +113,7 @@ void LevelLayer::initWorld(){
 		float radius = obs.get("radius", 0).asFloat();
 		int force = obs.get("force", 0).asInt();
 		float angle = obs.get("angle", 0).asFloat();
-		Point point = Point::Point(obs.get("x", 0).asFloat(), obs.get("y", 0).asFloat());
+		Point point = Point(obs.get("x", 0).asFloat(), obs.get("y", 0).asFloat());
 		string go = obs.get("type", "Invalid").asString();
 		if (go == "ball")
 			balls.push_back(new Ball(world, Point(factorX*point.x, factorY * point.y), radius * factorY, A_BALL, A_SENSOR | BOUNDARY | A_BALL));
@@ -216,11 +217,9 @@ void LevelLayer::didAccelerate(Acceleration* acceleration)
 	// multiply the gravity by 10
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 	b2Vec2 gravity( -accelY*10, accelX*10);    
-#endif
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)      
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)      
 	b2Vec2 gravity( accelX*10, accelY*10);
-#endif
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_PLATFORM_MAC)      
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_PLATFORM_MAC)      
 	b2Vec2 gravity(accelX * 10, accelY * 10);
 #endif
 
