@@ -10,7 +10,7 @@
 
 EndZone::EndZone(b2World* world, cocos2d::Point p, float radius, uint16 categoryBits, uint16 maskBits){
 	type = ENT_ENDZONE;
-	body = NULL;
+	body = nullptr;
 	m_radius = radius / RATIO;
 	hasBall = 0;
 	//set up dynamic body, store in class variable

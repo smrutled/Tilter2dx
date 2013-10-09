@@ -10,7 +10,7 @@
 
 AntiAccel::AntiAccel(b2World* world, cocos2d::Point p, float width, float height, uint16 categoryBits, uint16 maskBits){
 	type = ENT_ANTIACCEL;
-	body = NULL;
+	body = nullptr;
 
 	b2Vec2 center = b2Vec2(p.x + width / 2, p.y + height / 2);
 

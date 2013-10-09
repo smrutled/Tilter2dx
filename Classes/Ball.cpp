@@ -11,7 +11,7 @@
 
 Ball::Ball(b2World* world, cocos2d::Point p, float radius, uint16 categoryBits, uint16 maskBits){
 	type = ENT_BALL;
-	body = NULL;
+	body = nullptr;
 	m_radius = radius / RATIO;
 	start = p;
 	isAlive = true;

@@ -21,22 +21,25 @@ using namespace CocosDenshion;
 
 
 
-LevelLayer::LevelLayer() : world(NULL)
+LevelLayer::LevelLayer() : world(nullptr)
 {
 	this->setTouchEnabled(true);
 	this->setAccelerometerEnabled(true);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_PLATFORM_MAC) 
+	this->setKeyboardEnabled(true);
+#endif
+
 	if(!SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying())
 		SimpleAudioEngine::getInstance()->playBackgroundMusic("backround.mp3", true);
 	
 	this->initWorld();
 	
 	//Pause button
+	MenuItemFont::setFontName("fonts/Mark Felt.ttf");
 	MenuItemFont* item = MenuItemFont::create("||", CC_CALLBACK_1(LevelLayer::menuPauseCallback, this));
-	Menu* menu = Menu::create(item, NULL);
-	this->addChild(menu, -1);
-	menu->alignItemsVertically();
+	Menu* menu = Menu::create(item, nullptr);
 	menu->setPosition(scaledWidth * 1 / 20, scaledHeight * 9 / 10);
-
+	this->addChild(menu, -1);
 
 	this->schedule(schedule_selector(LevelLayer::tick));
 }
@@ -99,11 +102,11 @@ void LevelLayer::initWorld(){
 	CSJson::Value root;
 	CSJson::Reader reader;
 	char filename[20];
+	unsigned long filesize;
 	sprintf(filename, "level%d.JSON", currentLevel);
 	string levelepath = FileUtils::getInstance()->fullPathForFilename(filename);
-	std::ifstream infile(levelepath);
-	bool parsingSuccessful = reader.parse(infile, root);
-	infile.close();
+	unsigned char* data = FileUtils::getInstance()->getFileData(levelepath.c_str(), "r", &filesize);
+	bool parsingSuccessful = reader.parse((const char*) data, root);
 	CSJson::Value gameOb = root["gameObjects"];
 
 	//Parse level objects
@@ -203,7 +206,7 @@ void LevelLayer::tick(float dt)
 }
 
 
-void LevelLayer::didAccelerate(Acceleration* acceleration)
+void LevelLayer::onAcceleration(Acceleration* acceleration, Event* event)
 {
 	static float prevX = 0, prevY = 0;
 	const float kFilterFactor = 0.8f;
@@ -250,7 +253,7 @@ void LevelLayer::menuExitCallback(Object* pSender){
 void LevelLayer::pauseMenu(){
 	MenuItemFont::setFontSize(50 * factorY);
 	MenuItemFont* item1 = MenuItemFont::create("Exit", CC_CALLBACK_1(LevelLayer::menuExitCallback, this));
-	Menu* menu1 = Menu::create(item1, NULL);
+	Menu* menu1 = Menu::create(item1, nullptr);
 	menu1->setTag(10);
 	this->addChild(menu1, 0);
 	menu1->alignItemsVertically();

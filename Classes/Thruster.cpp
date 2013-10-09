@@ -11,7 +11,7 @@
 
 Thruster::Thruster(b2World* world, int force, cocos2d::Point p, float width, float height, float angle, uint16 categoryBits, uint16 maskBits){
 	type = ENT_THRUSTER;
-	body = NULL;
+	body = nullptr;
 	m_angle = angle*DEGTORAD;
 	m_force = force;
 	//set up dynamic body, store in class variable

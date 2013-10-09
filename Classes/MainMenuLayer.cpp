@@ -25,18 +25,18 @@ MainMenuLayer::MainMenuLayer()
 
 
 	MenuItemFont::setFontSize(40);
-	MenuItemFont::setFontName("Courier New");
+	MenuItemFont::setFontName("fonts/Courier New.ttf");
 
 
 	MenuItemFont* item = MenuItemFont::create("Play", CC_CALLBACK_1(MainMenuLayer::menuCallback, this));
 	MenuItemFont* item1 = MenuItemFont::create("Exit", CC_CALLBACK_1(MainMenuLayer::menuExitCallback, this));
-	Menu* menu = Menu::create(item, item1, NULL);
+	Menu* menu = Menu::create(item, item1, nullptr);
 	addChild(menu, -1);
 	menu->alignItemsVertically();
 	menu->setPosition(screenWidth / 2, screenHeight / 2);
 
 
-	LabelTTF *label = LabelTTF::create("Tilter 2D", "Marker Felt", 50);
+	LabelTTF *label = LabelTTF::create("Tilter 2D", "fonts/Marker Felt.ttf", 50);
 	addChild(label, -1);
 	label->setColor(Color3B(255, 0, 0));
 	label->setPosition(Point(screenWidth / 2, screenHeight - 50));

@@ -30,7 +30,7 @@ public:
 	// returns a Scene that contains the Level1Layer as the only child
 	static cocos2d::Scene* scene(int lvl);
 	virtual void draw();
-	virtual void didAccelerate(cocos2d::Acceleration* acceleration);
+	virtual void onAcceleration(cocos2d::Acceleration* acceleration, cocos2d::Event* event);
 	void tick(float dt);
 
 	void pauseMenu();

@@ -9,7 +9,7 @@
 
 ABlock::ABlock(b2World* world, cocos2d::Point position, float width, float height, uint16 categoryBits, uint16 maskBits){
 	type = ENT_BLOCK;
-	body = NULL;
+	body = nullptr;
 
 	cocos2d::Point center = cocos2d::Point(position.x + width / 2, position.y + height / 2);
 
