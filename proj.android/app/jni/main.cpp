@@ -1,5 +1,6 @@
 /****************************************************************************
  Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+ Copyright (c) 2019-present Axmol Engine contributors (see AUTHORS.md).
 
  https://axmol.dev/
 
@@ -22,23 +23,23 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by game.RC
-//
+#include <memory>
 
-#define IDS_PROJNAME 100
-#define IDR_TESTJS 100
+#include <android/log.h>
+#include <jni.h>
 
-#define ID_FILE_NEW_WINDOW 32771
+#include "AppDelegate.h"
 
-// Next default values for new objects
-//
-#ifdef APSTUDIO_INVOKED
-#    ifndef APSTUDIO_READONLY_SYMBOLS
-#        define _APS_NEXT_RESOURCE_VALUE 201
-#        define _APS_NEXT_CONTROL_VALUE 1000
-#        define _APS_NEXT_SYMED_VALUE 101
-#        define _APS_NEXT_COMMAND_VALUE 32775
-#    endif
-#endif
+#define LOG_TAG "main"
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
+
+namespace
+{
+std::unique_ptr<AppDelegate> appDelegate;
+}
+
+void axmol_android_app_init(JNIEnv* env)
+{
+    LOGD("axmol_android_app_init");
+    appDelegate.reset(new AppDelegate());
+}

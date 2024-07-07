@@ -1,5 +1,6 @@
 /****************************************************************************
  Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+ Copyright (c) 2019-present Axmol Engine contributors (see AUTHORS.md).
 
  https://axmol.dev/
 
@@ -22,23 +23,48 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by game.RC
-//
+#ifndef __MAIN_SCENE_H__
+#define __MAIN_SCENE_H__
 
-#define IDS_PROJNAME 100
-#define IDR_TESTJS 100
+#include "axmol.h"
 
-#define ID_FILE_NEW_WINDOW 32771
 
-// Next default values for new objects
-//
-#ifdef APSTUDIO_INVOKED
-#    ifndef APSTUDIO_READONLY_SYMBOLS
-#        define _APS_NEXT_RESOURCE_VALUE 201
-#        define _APS_NEXT_CONTROL_VALUE 1000
-#        define _APS_NEXT_SYMED_VALUE 101
-#        define _APS_NEXT_COMMAND_VALUE 32775
-#    endif
-#endif
+class MainScene : public ax::Scene
+{
+    enum class GameState
+    {
+        init = 0,
+        update,
+        pause,
+        end,
+        menu1,
+        menu2,
+    };
+    
+public:
+    bool init() override;
+    void update(float delta) override;
+
+    // touch
+    void onTouchesBegan(const std::vector<ax::Touch*>& touches, ax::Event* event);
+    void onTouchesMoved(const std::vector<ax::Touch*>& touches, ax::Event* event);
+    void onTouchesEnded(const std::vector<ax::Touch*>& touches, ax::Event* event);
+
+    // mouse
+    void onMouseDown(ax::Event* event);
+    void onMouseUp(ax::Event* event);
+    void onMouseMove(ax::Event* event);
+    void onMouseScroll(ax::Event* event);
+
+    // Keyboard
+    void onKeyPressed(ax::EventKeyboard::KeyCode code, ax::Event* event);
+    void onKeyReleased(ax::EventKeyboard::KeyCode code, ax::Event* event);
+
+    // a selector callback
+    void menuCloseCallback(ax::Object* sender);
+
+private:
+    GameState _gameState = GameState::init;
+};
+
+#endif  // __MAIN_SCENE_H__

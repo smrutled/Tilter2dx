@@ -1,5 +1,6 @@
 /****************************************************************************
  Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+ Copyright (c) 2019-present Axmol Engine contributors (see AUTHORS.md).
 
  https://axmol.dev/
 
@@ -22,23 +23,40 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by game.RC
-//
+#ifndef _APP_DELEGATE_H_
+#define _APP_DELEGATE_H_
 
-#define IDS_PROJNAME 100
-#define IDR_TESTJS 100
+#include "axmol.h"
 
-#define ID_FILE_NEW_WINDOW 32771
+/**
+@brief    The axmol Application.
 
-// Next default values for new objects
-//
-#ifdef APSTUDIO_INVOKED
-#    ifndef APSTUDIO_READONLY_SYMBOLS
-#        define _APS_NEXT_RESOURCE_VALUE 201
-#        define _APS_NEXT_CONTROL_VALUE 1000
-#        define _APS_NEXT_SYMED_VALUE 101
-#        define _APS_NEXT_COMMAND_VALUE 32775
-#    endif
-#endif
+Private inheritance here hides part of interface from Director.
+*/
+class AppDelegate : private ax::Application
+{
+public:
+    AppDelegate();
+    ~AppDelegate() override;
+
+    void initGLContextAttrs() override;
+
+    /**
+    @brief    Implement Director and Scene init code here.
+    @return true    Initialize success, app continue.
+    @return false   Initialize failed, app terminate.
+    */
+    bool applicationDidFinishLaunching() override;
+
+    /**
+    @brief  Called when the application moves to the background
+    */
+    void applicationDidEnterBackground() override;
+
+    /**
+    @brief  Called when the application reenters the foreground
+    */
+    void applicationWillEnterForeground() override;
+};
+
+#endif  // _APP_DELEGATE_H_

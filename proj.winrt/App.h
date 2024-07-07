@@ -1,18 +1,19 @@
 /****************************************************************************
  Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
-
+ Copyright (c) 2019-present Axmol Engine contributors (see AUTHORS.md).
+ 
  https://axmol.dev/
-
+ 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  copies of the Software, and to permit persons to whom the Software is
  furnished to do so, subject to the following conditions:
-
+ 
  The above copyright notice and this permission notice shall be included in
  all copies or substantial portions of the Software.
-
+ 
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,23 +23,25 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by game.RC
-//
+#pragma once
 
-#define IDS_PROJNAME 100
-#define IDR_TESTJS 100
+#include "pch.h"
 
-#define ID_FILE_NEW_WINDOW 32771
+#include "App.xaml.g.h"
+#include "OpenGLES.h"
 
-// Next default values for new objects
-//
-#ifdef APSTUDIO_INVOKED
-#    ifndef APSTUDIO_READONLY_SYMBOLS
-#        define _APS_NEXT_RESOURCE_VALUE 201
-#        define _APS_NEXT_CONTROL_VALUE 1000
-#        define _APS_NEXT_SYMED_VALUE 101
-#        define _APS_NEXT_COMMAND_VALUE 32775
-#    endif
-#endif
+using namespace winrt;
+
+namespace winrt::AxmolAppWinRT::implementation
+{
+    struct App : AppT<App>
+    {
+        App();
+        void OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs const&);
+        void OnSuspending(IInspectable const&, Windows::ApplicationModel::SuspendingEventArgs const&);
+        void OnResuming(IInspectable const&, IInspectable const&);
+        void OnNavigationFailed(IInspectable const&, Windows::UI::Xaml::Navigation::NavigationFailedEventArgs const&);
+        Windows::Foundation::IInspectable mPage;
+        OpenGLES mOpenGLES;
+    };
+}
