@@ -42,7 +42,7 @@ local.properties
 *.sln.docstates
 
 # Build results
-
+build_*/
 [Dd]ebug/
 [Rr]elease/
 x64/
@@ -212,3 +212,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+run.bat
